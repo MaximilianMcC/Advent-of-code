@@ -23,4 +23,12 @@ for currentCalorie in totalCalories:
     if (currentCalorie > currentBiggest):
         currentBiggest = currentCalorie
 
+# Get the top 3 biggest calories
+totalCalories = sorted(totalCalories, reverse=True)
+firstBiggest = totalCalories[0]
+secondBiggest = totalCalories[1]
+thirdBiggest = totalCalories[2]
+top3Calories = sum([firstBiggest, secondBiggest, thirdBiggest])
+
 print("The biggest calorie is", currentBiggest)
+print("The sum of the top 3 biggest calories is:", top3Calories)
