@@ -3,11 +3,9 @@
 # Get the data
 data = open("data.txt", "r").read()
 
-
+# Split the data into different elf's
 totalCalories = []
 
-
-# Split the data into different elf's
 elfs = data.split("\n\n")
 for elf in elfs:
     
@@ -17,11 +15,6 @@ for elf in elfs:
     totalCalories.append(sum(calories))
 
 
-# Get the biggest amount of calories
-currentBiggest = 0
-for currentCalorie in totalCalories:
-    if (currentCalorie > currentBiggest):
-        currentBiggest = currentCalorie
 
 # Get the top 3 biggest calories
 totalCalories = sorted(totalCalories, reverse=True)
@@ -30,5 +23,5 @@ secondBiggest = totalCalories[1]
 thirdBiggest = totalCalories[2]
 top3Calories = sum([firstBiggest, secondBiggest, thirdBiggest])
 
-print("The biggest calorie is", currentBiggest)
+print("The biggest calorie is", firstBiggest)
 print("The sum of the top 3 biggest calories is:", top3Calories)
