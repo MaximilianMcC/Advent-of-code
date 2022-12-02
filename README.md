@@ -9,7 +9,7 @@ Advent of Code is an Advent calendar of small programming puzzles for a variety 
 | **Day**  | **Stars** | **Language** |
 |:--------:|:---------:|:------------:|
 |  Day 1   | ⭐⭐      | Python       |
-|  Day 2   |           |              |
+|  Day 2   |           | C#           |
 |  Day 3   |           |              |
 |  Day 4   |           |              |
 |  Day 5   |           |              |
