@@ -2,9 +2,9 @@
     
     enum Move
     {
-        ROCK = 1,
-        PAPER = 2,
-        SCISSORS = 3,
+        Rock = 1,
+        Paper = 2,
+        Scissors = 3,
 
         Lose = 1,
         Draw = 2,
@@ -31,27 +31,27 @@
 
             // Get the opponents move
             Move opponentsMove = new Move();
-            if (gameInput[0] == 'A') opponentsMove = Move.ROCK;
-            else if (gameInput[0] == 'B') opponentsMove = Move.PAPER;
-            else if (gameInput[0] == 'C') opponentsMove = Move.SCISSORS;
+            if (gameInput[0] == 'A') opponentsMove = Move.Rock;
+            else if (gameInput[0] == 'B') opponentsMove = Move.Paper;
+            else if (gameInput[0] == 'C') opponentsMove = Move.Scissors;
 
             // Get your move
             Move yourMove = new Move();
-            if (gameInput[2] == 'X') yourMove = Move.ROCK;
-            else if (gameInput[2] == 'Y') yourMove = Move.PAPER;
-            else if (gameInput[2] == 'Z') yourMove = Move.SCISSORS;
+            if (gameInput[2] == 'X') yourMove = Move.Rock;
+            else if (gameInput[2] == 'Y') yourMove = Move.Paper;
+            else if (gameInput[2] == 'Z') yourMove = Move.Scissors;
             score += (int)yourMove;
 
             // See who wins
             if (yourMove == opponentsMove) score += 3;
             else {
-                if (yourMove == Move.ROCK && opponentsMove == Move.SCISSORS) score += 6;
-                else if (yourMove == Move.SCISSORS && opponentsMove == Move.PAPER) score += 6;
-                else if (yourMove == Move.PAPER && opponentsMove == Move.ROCK) score += 6;
+                if (yourMove == Move.Rock && opponentsMove == Move.Scissors) score += 6;
+                else if (yourMove == Move.Scissors && opponentsMove == Move.Paper) score += 6;
+                else if (yourMove == Move.Paper && opponentsMove == Move.Rock) score += 6;
 
-                if (opponentsMove == Move.ROCK && yourMove == Move.SCISSORS) score += 0;
-                else if (opponentsMove == Move.SCISSORS && yourMove == Move.PAPER) score += 0;
-                else if (opponentsMove == Move.PAPER && yourMove == Move.ROCK) score += 0;
+                if (opponentsMove == Move.Rock && yourMove == Move.Scissors) score += 0;
+                else if (opponentsMove == Move.Scissors && yourMove == Move.Paper) score += 0;
+                else if (opponentsMove == Move.Paper && yourMove == Move.Rock) score += 0;
             }
 
             totalScore1 += score;
@@ -66,9 +66,9 @@
 
             // Get the opponents move
             Move opponentsMove = new Move();
-            if (gameInput[0] == 'A') opponentsMove = Move.ROCK;
-            else if (gameInput[0] == 'B') opponentsMove = Move.PAPER;
-            else if (gameInput[0] == 'C') opponentsMove = Move.SCISSORS;
+            if (gameInput[0] == 'A') opponentsMove = Move.Rock;
+            else if (gameInput[0] == 'B') opponentsMove = Move.Paper;
+            else if (gameInput[0] == 'C') opponentsMove = Move.Scissors;
 
             // Get your move
             Move yourMove = new Move();
@@ -79,16 +79,16 @@
             // Get new moves
             if (yourMove == Move.Lose)
             {
-                if (opponentsMove == Move.ROCK) yourMove = Move.SCISSORS;
-                else if (opponentsMove == Move.SCISSORS) yourMove = Move.PAPER;
-                else if (opponentsMove == Move.PAPER) yourMove = Move.ROCK;
+                if (opponentsMove == Move.Rock) yourMove = Move.Scissors;
+                else if (opponentsMove == Move.Scissors) yourMove = Move.Paper;
+                else if (opponentsMove == Move.Paper) yourMove = Move.Rock;
             }
             else if (yourMove == Move.Draw) yourMove = opponentsMove;
             else if (yourMove == Move.Win)
             {
-                if (opponentsMove == Move.SCISSORS) yourMove = Move.ROCK;
-                else if (opponentsMove == Move.PAPER) yourMove = Move.SCISSORS;
-                else if (opponentsMove == Move.ROCK) yourMove = Move.PAPER;
+                if (opponentsMove == Move.Scissors) yourMove = Move.Rock;
+                else if (opponentsMove == Move.Paper) yourMove = Move.Scissors;
+                else if (opponentsMove == Move.Rock) yourMove = Move.Paper;
             }
             score += (int)yourMove;
 
@@ -96,13 +96,13 @@
             if (yourMove == opponentsMove) score += 3;
             else
             {
-                if (yourMove == Move.ROCK && opponentsMove == Move.SCISSORS) score += 6;
-                else if (yourMove == Move.SCISSORS && opponentsMove == Move.PAPER) score += 6;
-                else if (yourMove == Move.PAPER && opponentsMove == Move.ROCK) score += 6;
+                if (yourMove == Move.Rock && opponentsMove == Move.Scissors) score += 6;
+                else if (yourMove == Move.Scissors && opponentsMove == Move.Paper) score += 6;
+                else if (yourMove == Move.Paper && opponentsMove == Move.Rock) score += 6;
 
-                if (opponentsMove == Move.ROCK && yourMove == Move.SCISSORS) score += 0;
-                else if (opponentsMove == Move.SCISSORS && yourMove == Move.PAPER) score += 0;
-                else if (opponentsMove == Move.PAPER && yourMove == Move.ROCK) score += 0;
+                if (opponentsMove == Move.Rock && yourMove == Move.Scissors) score += 0;
+                else if (opponentsMove == Move.Scissors && yourMove == Move.Paper) score += 0;
+                else if (opponentsMove == Move.Paper && yourMove == Move.Rock) score += 0;
             }
 
             totalScore2 += score;
