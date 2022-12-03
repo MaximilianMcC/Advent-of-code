@@ -3,7 +3,6 @@ package Day3;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Properties;
 import java.util.Scanner;
 
 
@@ -30,7 +29,8 @@ public class Main {
             e.printStackTrace();
         }
 
-        int totalItemPriorities = 0;
+        // Part 1
+        int totalItemPriorities1 = 0;
         for (String rucksack : data) {
             
             // Split each of the rucksacks into 2 parts
@@ -67,10 +67,10 @@ public class Main {
                 }
             }
 
-            totalItemPriorities += itemPriority;
+            totalItemPriorities1 += itemPriority;
         }
 
-        System.out.println(totalItemPriorities);
-
+        // Give the answer
+        System.out.println("Total item priorities for each elf: " + totalItemPriorities1);
     }
 }
