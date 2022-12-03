@@ -10,7 +10,7 @@ Advent of Code is an Advent calendar of small programming puzzles for a variety 
 |:--------:|:---------:|:------------:|
 |  [Day 1](https://github.com/MaximilianMcC/Advent-of-code-2022/tree/main/Day%201)   | ⭐⭐      | Python       |
 |  [Day 2](https://github.com/MaximilianMcC/Advent-of-code-2022/tree/main/Day%202)   | ⭐⭐      | C#           |
-|  [Day 3](https://github.com/MaximilianMcC/Advent-of-code-2022/tree/main/Day%203)   |           | Java         |
+|  [Day 3](https://github.com/MaximilianMcC/Advent-of-code-2022/tree/main/Day%203)   | ⭐        | Java         |
 |  [Day 4](https://github.com/MaximilianMcC/Advent-of-code-2022/tree/main/Day%204)   |           |              |
 |  [Day 5](https://github.com/MaximilianMcC/Advent-of-code-2022/tree/main/Day%205)   |           |              |
 |  [Day 6](https://github.com/MaximilianMcC/Advent-of-code-2022/tree/main/Day%206)   |           |              |
