@@ -29,8 +29,7 @@ public class Part1 {
             e.printStackTrace();
         }
 
-        // Part 1
-        int totalItemPriorities1 = 0;
+        int totalItemPriorities = 0;
         for (String rucksack : data) {
             
             // Split each of the rucksacks into 2 parts
@@ -67,10 +66,10 @@ public class Part1 {
                 }
             }
 
-            totalItemPriorities1 += itemPriority;
+            totalItemPriorities += itemPriority;
         }
 
         // Give the answer
-        System.out.println("Total item priorities for each elf: " + totalItemPriorities1);
+        System.out.println("Total item priorities for each elf: " + totalItemPriorities);
     }
 }
