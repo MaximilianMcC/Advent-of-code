@@ -1,6 +1,4 @@
-﻿using System.Text.RegularExpressions;
-
-class Part1
+﻿class Part1
 {
 	
 	public static void Main(string[] args)
@@ -35,6 +33,7 @@ class Part1
 			crates[i] = currentCrateRow;
 		}
 
+		
 
 
 		// Parse the move data
@@ -65,12 +64,13 @@ class Part1
 		{
 			for (int j = 0; j < crates[i].Count; j++)
 			{
-				if (j == 0)
+				if (j == crates[i].Count - 1)
 				{
 					topCrates += crates[i][j];
 				}
 			}
 		}
+
 		
 		// Show the answer
 		Console.WriteLine("The top crates on each stack are: " + topCrates);
