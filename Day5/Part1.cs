@@ -10,21 +10,16 @@ class Part1
 		string[] data = File.ReadAllLines("./data.txt");
 
 		// Split the data into 2 bits
-		int cratesDataIndex = 0;
-		int moveDataIndex = 0;
+		int dataSplitIndex = 0;
 		for (int i = 0; i < data.Length; i++) 
 		{
 			// Get the split positions
-			if (data[i] == "")
-			{
-				cratesDataIndex = i;
-				moveDataIndex = i + 1;
-			}
+			if (data[i] == "") dataSplitIndex = i;
 		}
 
 		// Parse the crates data
-		string[] cratesData = data[0..cratesDataIndex];
-		List<char>[] crates = new List<char>[cratesDataIndex];
+		string[] cratesData = data[0..dataSplitIndex];
+		List<char>[] crates = new List<char>[9]; //! 9 is Hardcoded value. Change to be dynamic or whatever it's called
 
 		for (int i = 0; i < crates.Length; i++)
 		{
@@ -32,72 +27,53 @@ class Part1
 			string crateRow = cratesData[i].Substring(cratesData[i].IndexOf(" ")).Replace(" ", "").Replace("[", "").Replace("]", "");
 
 			// Add all of the individual crates to a "stack" of crates
+			List<char> currentCrateRow = new List<char>();
 			foreach (char crate in crateRow)
 			{
-				Console.Write(crate + " ");
+				currentCrateRow.Add(crate);
 			}
-			Console.WriteLine();
+			crates[i] = currentCrateRow;
 		}
-
-
-		Debug.Array(crates);
-
 
 
 
 		// Parse the move data
+		string[] moveData = data[(dataSplitIndex + 1)..data.Length];
+		for (int i = 0; i < moveData.Length; i++)
+		{
+			// Get the values from the strings
+			//? Move X crates from list Y to list Z
+			int quantity = int.Parse(moveData[i].Split(" ")[1]);
+			int startPile = int.Parse(moveData[i].Split(" ")[3]) - 1;
+			int endPile = int.Parse(moveData[i].Split(" ")[5]) - 1;
+
+			// Make a copy of the crates that need be moved
+			List<char> cratesToMove = crates[startPile].GetRange(0, quantity);
+
+			// Remove the crates from the start pile
+			cratesToMove.ForEach(crate => crates[startPile].Remove(crate));
+
+			// Add the crates to the end pile
+			crates[endPile].AddRange(cratesToMove);
+		}
+
+
+
+		// Get the top value from each pile
+		string topCrates = "";
+		for (int i = 0; i < crates.Length; i++)
+		{
+			for (int j = 0; j < crates[i].Count; j++)
+			{
+				if (j == 0)
+				{
+					topCrates += crates[i][j];
+				}
+			}
+		}
 		
-	}
-}
+		// Show the answer
+		Console.WriteLine("The top crates on each stack are: " + topCrates);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-class Debug
-{
-	// Print the contents of an array
-	public static void Array<T>(T[] array, string? title = null, bool multiline = false)
-	{
-		if (title != null) Console.WriteLine($"{title} array contents - length: {array.Length}");
-		for (int i = 0; i < array.Length; i++)
-		{
-			if (multiline == true) Console.WriteLine(array[i]);
-			else
-			{
-				Console.Write(array[i]); 
-				if (i != array.Length - 1) Console.Write(", ");
-			}
-		}
-		Console.WriteLine();
-	}
-
-	// Print the contents of a list
-	public static void List<T>(List<T> list, string? title = null, bool multiline = false)
-	{
-		if (title != null) Console.WriteLine($"{title} list contents - count: {list.Count}");
-		for (int i = 0; i < list.Count; i++)
-		{
-			if (multiline == true) Console.WriteLine(list[i]);
-			else
-			{
-				Console.Write(list[i]);
-				if (i != list.Count - 1) Console.Write(", ");
-			}
-		}
-		Console.WriteLine();
 	}
 }
