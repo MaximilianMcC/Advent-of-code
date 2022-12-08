@@ -1,9 +1,11 @@
 # 🎄 **Advent of code 2022** 🎄
+<img align="right" src="https://user-images.githubusercontent.com/16360374/49324718-7954f100-f4e8-11e8-8ef6-1b701afc504f.png" height=300>
 
+<div align="left">
 Advent of Code is an Advent calendar of small programming puzzles for a variety of skill sets and skill levels that can be solved in any programming language you like.
 
 [Advent of code website](https://adventofcode.com)
-
+</div>
 
 ## 🎄 **My AOC statistics** 🎄
 | **Day**  | **Stars** | **Language** |
