@@ -1,4 +1,7 @@
-﻿public class Program {
+﻿using System;
+using System.IO;
+
+public class Program {
     
     enum Move
     {
@@ -17,7 +20,7 @@
         // --- Day 2: Rock Paper Scissors ---
 
         // Get the data
-        string data = File.ReadAllText("./data.txt");
+        string data = File.ReadAllText("./Day2/data.txt");
         
         // Get all of the games
         string[] games = data.Split("\n");
