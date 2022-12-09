@@ -1,3 +1,4 @@
+package Day3;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -8,9 +9,6 @@ import java.util.Scanner;
 public class Part2 {
     
     public static void main(String[] args) {
-        
-        // --- Day 3: Rucksack Reorganization ---
-
 
         // Get the data
         List<String> data = new ArrayList<String>();
