@@ -25,60 +25,62 @@ public class Part1 {
 			e.printStackTrace();
 		}
 
-		System.out.println("Data: " + data);
-		System.out.println("Data length: " + data.size());
 
+
+
+		// Get the width of each line of the data
 		int dataWidth = data.get(0).length();
-		System.out.println("Data width: " + dataWidth);
 
 
+		int visibleTrees = 0;
 
-		System.out.println("\n\n");
 
-
+		// Get the trees on the outside of the forest
+		int outsideTrees = (dataWidth * 2) + (data.size() - 2) * 2;
+		visibleTrees += outsideTrees;
 
 		// Loop through every tree in the forest
 		for (int forestY = 1; forestY < data.size(); forestY++) {
 			for (int forestX = 1; forestX < dataWidth; forestX++) {
 				
+				// Check for if the coordinates are out of bounds
+				//TODO: Add to the outside trees thing
+				if ((forestX > (dataWidth - 2)) || (forestY > data.size() - 2)) continue;
 				
 
-				// Check for if the tree position is in the bounds of the array
-				if ((forestX > (dataWidth - 2)) || (forestY > data.size() - 2)) continue;
-
-
-
+				
 				// Get the current tree
 				int tree = Integer.parseInt(data.get(forestY).split("")[forestX]);
-				System.out.println("Current tree: " + tree);
 
 				// Get the tree to the left of it
 				int leftTree = Integer.parseInt(data.get(forestY).split("")[forestX - 1]);
-				System.out.println("Left tree: " + leftTree);
 
 				// Get the tree to the right of it
 				int rightTree = Integer.parseInt(data.get(forestY).split("")[forestX + 1]);
-				System.out.println("Right tree: " + rightTree);
 
 				// Get the tree above it
 				int topTree = Integer.parseInt(data.get(forestY - 1).split("")[forestX]);
-				System.out.println("Top tree: " + topTree);
-				
+
 				// Get the tree below it
 				int bottomTree = Integer.parseInt(data.get(forestY + 1).split("")[forestX]);
-				System.out.println("Bottom tree: " + bottomTree);
 
-				System.out.println("\n");
-				System.out.println(" " + topTree + " ");
-				System.out.println(leftTree + "" + tree + "" + rightTree);
-				System.out.println(" " + bottomTree + " ");
 
-				
-				System.out.println("\n\n\n");
+				// Check for if the current tree is visible
+				boolean visible = false;
+				if (topTree < tree && leftTree < tree) visible = true;
+				else if (topTree < tree && rightTree < tree) visible = true;
+				else if (bottomTree < tree && leftTree < tree) visible = true;
+				else if (bottomTree < tree && rightTree < tree) visible = true;
+
+				if (visible) visibleTrees++;
 			}
 
-			System.out.println("\n\n-------------\n\n");
 		}
+
+		// Print the answer
+		System.out.println("Visible trees outside: " + outsideTrees);
+		System.out.println("Visible trees: " + (visibleTrees - outsideTrees));
+		System.out.println("Visible trees total: " + visibleTrees);
 
 	}
 
