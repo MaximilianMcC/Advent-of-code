@@ -1,6 +1,6 @@
- 1 [Z] [N]
- 2 [D] [C] [M]
- 3 [P]
+1 [Z] [N]
+2 [D] [C] [M]
+3 [P]
 
 move 1 from 2 to 1
 move 3 from 1 to 3
