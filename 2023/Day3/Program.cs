@@ -2,10 +2,11 @@
 {
 	public static void Main(string[] args)
 	{
+
+		// Load the data
 		string[] data = File.ReadAllLines("./test.txt");
-		// string[] data = File.ReadAllLines("./data.txt");
 
 		Console.WriteLine(Part1.Solution(data));
-		Console.WriteLine(Part2.Solution(data));
+
 	}
 }
