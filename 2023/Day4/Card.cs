@@ -1,7 +1,7 @@
 struct Card
 {
-	public static int[] WinningNumbers { get; set; }
-	public static int[] ScratchedNumbers { get; set; }
+	public int[] WinningNumbers { get; set; }
+	public int[] ScratchedNumbers { get; set; }
 
 	public Card(int[] winningNumbers, int[] scratchedNumbers)
 	{

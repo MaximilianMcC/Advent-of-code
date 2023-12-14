@@ -5,3 +5,5 @@ Advent of code is an advent calender of programming questions. Each question con
 |:---:|:------:|:------:|:--------:|
 | [Day 1](https://github.com/MaximilianMcC/Advent-of-code/tree/main/2023/Day1) | ⭐ | ⭐ | C# |
 | [Day 2](https://github.com/MaximilianMcC/Advent-of-code/tree/main/2023/Day2) | ⭐ |    | C# |
+| [Day 3](https://github.com/MaximilianMcC/Advent-of-code/tree/main/2023/Day3) |    |    | C# |
+| [Day 4](https://github.com/MaximilianMcC/Advent-of-code/tree/main/2023/Day4) | ⭐ |    | C# |
