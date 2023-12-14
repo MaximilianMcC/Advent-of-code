@@ -28,7 +28,45 @@ class Part1
 				// the entire number is revealed both forwards and back
 				foreach (Vector2 numberPosition in adjacentNumbers)
 				{
-					int currentNumber = schematic[(int)numberPosition.X][(int)numberPosition.Y];
+					string currentNumber = schematic[(int)numberPosition.X][(int)numberPosition.Y].ToString();
+					int index = (int)numberPosition.X;
+
+					// Go across the x direction and check for if the number continues
+					// TODO: Handle out of bounds exception
+					//? Using 2 because numbers are never more than 3 characters (we already have the first character fr)
+					for (int k = 0; k < 2; k++)
+					{
+						// Check for if there is enough space left in the array
+						if (numberPosition.X + k > schematic[(int)numberPosition.Y].Length) continue;
+
+						// Check for if the next character is a number
+						int newNumber = 0;
+						char nextCharacter = schematic[(int)numberPosition.X + k][(int)numberPosition.Y];
+
+						if (int.TryParse(nextCharacter.ToString(), out newNumber))
+						{
+							// Add the new number to the full number
+							currentNumber += newNumber;
+						}
+					}
+
+					for (int k = 0; k < 2; k++)
+					{
+						// Check for if there is enough space left in the array
+						if (numberPosition.X + k < 0) continue;
+
+						// Check for if the next character is a number
+						int newNumber = 0;
+						char nextCharacter = schematic[(int)numberPosition.X - k][(int)numberPosition.Y];
+
+						if (int.TryParse(nextCharacter.ToString(), out newNumber))
+						{
+							// Add the new number to the full number
+							currentNumber = newNumber + currentNumber;
+						}
+					}
+
+					Console.WriteLine(currentNumber);
 				}
 			}
 		}
