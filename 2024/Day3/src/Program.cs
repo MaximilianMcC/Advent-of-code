@@ -7,6 +7,7 @@
 
 	public static void Main(string[] args)
 	{
-		Part1.Solve();
+		// Part1.Solve();
+		Part2.Solve();
 	}
 }
