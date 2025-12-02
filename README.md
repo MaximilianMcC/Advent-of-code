@@ -8,6 +8,7 @@ I have been doing AOC since 2021, but I only started to put my solutions on GitH
 |------|-------|
 | [2022](https://github.com/MaximilianMcC/Advent-of-code/tree/main/2022) | 11/50 |
 | [2023](https://github.com/MaximilianMcC/Advent-of-code/tree/main/2023) | 4/50 |
-| [2024](https://github.com/MaximilianMcC/Advent-of-code/tree/main/2024) | ?/50 |
+| [2024](https://github.com/MaximilianMcC/Advent-of-code/tree/main/2024) | 5/50 |
+| [2025](https://github.com/MaximilianMcC/Advent-of-code/tree/main/2025) | ?/25 |
 
 # [Advent of code Website](https://adventofcode.com/)
